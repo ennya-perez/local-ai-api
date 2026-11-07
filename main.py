@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, Field, field_validator
 import httpx
 import re
+import os
+from dotenv import load_dotenv
 
 app = FastAPI(
     title="Secure Local AI Microservice",
@@ -9,8 +11,11 @@ app = FastAPI(
     version="1.1.0",
 )
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "qwen2.5:7b"
+load_dotenv()
+
+OLLAMA_URL = os.getenv("OLLAMA_URL")
+MODEL_NAME = os.getenv("MODEL_NAME")
+OLLAMA_TIMEOUT = float(os.getenv("OLLAMA_TIMEOUT"))
 
 # --- DEFENSORÍA OWASP LLM01: SYSTEM PROMPT HARDCODED Y DELIMITADO ---
 # El system prompt NUNCA lo debe enviar el usuario. Se define en el backend.

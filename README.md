@@ -13,13 +13,13 @@ Microservicio en Python que expone una API RESTful para consumir el modelo **Qwe
 Clone the repo:
 
 ```Bash
-git clone [https://github.com/codecraft-prog/local-ai-api](https://github.com/codecraft-prog/local-ai-api.git)
+git clone [https://github.com/ennya-perez/local-ai-api](https://github.com/ennya-perez/local-ai-api.git)
 cd local-ai-api
 ```
 Create virtual enviroment and install dependencies:
 ```Bash
 python -m venv venv
-source venv/bin/activate  # In Windows: venv\Scripts\activate
+source .venv/bin/activate  # In Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 Run the API:
